@@ -11,13 +11,32 @@ public class ProductsBase implements Base {
     public void clearBase() {
         try{
             if(products.size()==0) throw new BaseException("Base is empty");
+            setProducts(new ArrayList<Product>());
         }
         catch (BaseException e)
         {
             return;
         }
-        setProducts(new ArrayList<Product>());
 
+    }
+
+    public void RemoveItem(){
+        try{
+            if(products.size()==0) throw new BaseException("Base is empty");
+            products.remove(products.size()-1);
+        }
+        catch (BaseException e){
+            return;
+        }
+    }
+    public void RemoveItem(Product product){
+        try{
+            if(products.size()==0) throw new BaseException("Base is empty");
+            products.remove(product);
+        }
+        catch (BaseException e){
+            return;
+        }
     }
 
 

@@ -11,15 +11,38 @@ public class UsersBase implements Base {
     public void clearBase() {
         try{
             if(users.size()==0) throw new BaseException("Base is empty");
+            setUsers(new ArrayList<User>());
         }
         catch (BaseException e)
         {
             return;
         }
-        setUsers(new ArrayList<User>());
+
 
     }
 
+    public void RemoveItem(){
+        try{
+            if(users.size()==0) throw new BaseException("Base is empty");
+            users.remove(users.size()-1);
+        }
+        catch (BaseException e)
+        {
+            return;
+        }
+    }
+
+
+    public void RemoveItem(User user){
+        try{
+            if(users.size()==0) throw new BaseException("Base is empty");
+            users.remove(user);
+        }
+        catch (BaseException e)
+        {
+            return;
+        }
+    }
 
 
     public ArrayList<User> getUsers() {
